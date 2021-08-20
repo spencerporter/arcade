@@ -19,6 +19,7 @@ html {
     color: #00a8ff;
     display: flex;
     flex-direction: column;
+    background-image: url("./images/Flynns.jpeg");
 }
 
 header{
@@ -35,4 +36,17 @@ h1{
 
 a {
     text-decoration: none;
+    color:#00a8ff;
+}
+
+a:visited{
+    color:#00a8ff;
+}
+
+a:hover{
+    color:#00eaff;
+}
+
+a:active{
+    color:#00eaff;
 }
