@@ -1,0 +1,38 @@
+/* Tron Blues 00a8ff 00eaff 26b4ca 59b4c7 */
+
+@font-face {
+    font-family: 'Tron';
+    src: url('fonts/TRON.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Tr2n';
+    src: url('fonts/Tr2n.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    background-color: black;
+    font-family: "Tr2n";
+    color: #00a8ff;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex: 1;
+    border-bottom: #26b4ca solid 5px;
+}
+
+h1{
+}
+
+a {
+    text-decoration: none;
+}

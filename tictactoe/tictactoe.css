@@ -1,0 +1,19 @@
+/* Tron Blues 00a8ff 00eaff 26b4ca 59b4c7 */
+
+td {
+    height: 100px;
+    width: 100px;
+    background-color: #00a8ff;
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1
+}
