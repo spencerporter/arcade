@@ -50,3 +50,8 @@ a:hover{
 a:active{
     color:#00eaff;
 }
+
+button {
+    background-color: #00a8ff;
+    border-radius: 25%;
+}

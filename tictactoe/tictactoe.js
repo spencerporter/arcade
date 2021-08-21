@@ -19,8 +19,7 @@ player1Input.placeholder = "Enter Player 1 Name...";
 let player2Input = document.createElement("input");
 player2Input.placeholder = "Enter Player 2 Name...";
 
-let startGameButton = document.createElement("button");
-startGameButton.innerHTML = "Start Game";
+let startGameButton = document.getElementById('startGame');
 
 function cellClick(event){
     if(event.target.tagName = "TD" && !winnerFound && gameRunning)
@@ -64,9 +63,12 @@ function generateRandomMove(){
 }
 
 function reset(){
+    let vsP = document.createElement("p");
+    vsP.innerHTML = " VS. ";
     inputArea.innerHTML = "";
-    inputArea.insertBefore(startGameButton, inputArea.firstChild);
+    startGameButton.style.display = "flex";
     inputArea.insertBefore(player2Input, inputArea.firstChild);
+    inputArea.insertBefore(vsP, inputArea.firstChild);
     inputArea.insertBefore(player1Input, inputArea.firstChild);
 
     status.innerHTML = "Enter Players Names, Blank for CPU";
@@ -108,7 +110,7 @@ function startGame(){
     winnerFound = false;
     gameRunning = true;
     turnCounter = 0;
-
+    startGameButton.style.display = "none";
     gameArea.style.display = "flex";
 }
 

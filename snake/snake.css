@@ -1,13 +1,18 @@
 /* Tron Blues 00a8ff 00eaff 26b4ca 59b4c7 */
 
 td {
-    height: 100px;
-    width: 100px;
+    height: 25px;
+    width: 25px;
     background-color: #00a8ff;
     font-size: 2rem;
     color: black;
     text-align: center;
     font-weight: bolder;
+}
+
+table{
+    border-collapse: collapse;
+    border: 2px solid #00a8ff;
 }
 
 main {
@@ -25,4 +30,20 @@ main {
     justify-content: space-around;
     text-align: center;
     width: 50%;
+}
+
+.lightCell{
+    background-color: #59b4c7;
+}
+
+.darkCell{
+    background-color: #00a8ff;
+}
+
+.snakeBit{
+    background-color: #00eaff;
+}
+
+.apple{
+    background-color: red;
 }
