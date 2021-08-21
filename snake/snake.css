@@ -16,20 +16,11 @@ table{
 }
 
 main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    flex: 1;
+    justify-content: center;
 }
 
-#inputArea {
-    display: flex;
-    flex-direction: row;
-    align-items:center;
-    justify-content: space-around;
-    text-align: center;
-    width: 50%;
+a {
+    height: 50%;
 }
 
 .lightCell{

@@ -1,6 +1,5 @@
 // TODO
 // * Dynamic Starting Spot
-// * Dynamic Apple
 // * High Score
 
 let board = document.getElementById("board");
@@ -18,7 +17,8 @@ let gameState = {
     apple: [3,4],
     snake: snake,
     gameRunning: false,
-    score: 0
+    score: 0, 
+    curInterval: 200
 };
 
 let interval;
@@ -76,6 +76,25 @@ function checkIsApple(position){
     return(gameState.apple.toString() == position.toString());
 }
 
+function newApple(){
+    let newAppleSpawned = false;
+    while(!newAppleSpawned){
+        let newAppleCell = getRandomCell()
+        if(!checkIsSnake(newAppleCell))
+        {
+            gameState.apple = newAppleCell;
+            newAppleSpawned = true;
+        }
+    }
+}
+
+function getRandomCell(){
+    let row = Math.floor(Math.random() * 20);
+    let col = Math.floor(Math.random() * 20);
+
+    return [row,col];
+}
+
 function moveSnake(){
     let head = snake.body[snake.body.length - 1]; // get last added cell so we know where to go next
     let newCell = [];
@@ -100,6 +119,7 @@ function moveSnake(){
         snake.body.push(newCell);
         if(checkIsApple(newCell)){
             gameState.score++;
+            newApple();
         } else {
             snake.body.shift(); //Pop off tail if no apple ate.
         }
@@ -156,7 +176,8 @@ function reset(){
     startGameButton.style.display = "none";
 
     initSnake();
-    interval = setInterval(tickGame, 500);
+    newApple();
+    interval = setInterval(tickGame, gameState.curInterval);
 }
 
 function onLoad(){

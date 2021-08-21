@@ -11,11 +11,11 @@ td {
 }
 
 main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    flex: 1;
+    justify-content: start;
+}
+
+a {
+    height: 50%;
 }
 
 #inputArea {
