@@ -53,7 +53,10 @@ ul {
     list-style: none;
     background-color: black;
     justify-content: space-around;
+    align-items: center;
     border-radius: 25%;
+    height: 50%;
+    width: 25%;
 }
 
 li {
@@ -62,27 +65,24 @@ li {
     align-items: center;
     color: black;
     background-color:#00a8ff;
-    width: 80%;  
-    height: 20%;
     border-radius: 25%;
     border: 2px solid black;
     font-weight:bold;
-    margin: 20px;
+    font-size: 25px;
+    height: 25%;
+    width: 80%;
 }
 
 a{
-
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: center;
     color: black;
     background-color:#00a8ff;
     text-decoration: none;
+    border-radius: 25%;
     height: 100%;
     width: 100%;
-    border-radius: 25%;
-    padding: 5px;
-    margin: 5px;
 }
 
 a:visited{

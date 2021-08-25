@@ -121,7 +121,7 @@ function moveSnake(){
             gameState.score++;
             newApple();
         } else {
-            snake.body.shift(); //Pop off tail if no apple ate.
+            snake.body.shift(); //Drop off tail if no apple ate.
         }
     }
 }
