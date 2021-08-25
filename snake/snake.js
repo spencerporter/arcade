@@ -5,6 +5,7 @@
 let board = document.getElementById("board");
 let status = document.getElementById("status");
 let startGameButton = document.getElementById('startGame');
+let highScore = document.getElementById("highScore");
 
 let boardSize = 20;
 
@@ -18,13 +19,13 @@ let gameState = {
     snake: snake,
     gameRunning: false,
     score: 0, 
-    curInterval: 200
+    curInterval: 200,
+    highScore: 0
 };
 
 let interval;
 
 function initSnake(){
-    //TODO Randomize Start Position
     snake.body = [ [10, 5], [10, 6], [10, 7], [10, 8] ];
 
     snake.direction = "r";
@@ -120,6 +121,7 @@ function moveSnake(){
         if(checkIsApple(newCell)){
             gameState.score++;
             newApple();
+            speedUpInterval();
         } else {
             snake.body.shift(); //Drop off tail if no apple ate.
         }
@@ -162,6 +164,12 @@ function inputHandler(event){
     }
 }
 
+function speedUpInterval(){
+    gameState.curInterval = gameState.curInterval - (gameState.curInterval * .05); //Reduce Intervale/Speed Up by 10% of current
+    clearInterval(interval);
+    interval = setInterval(tickGame, gameState.curInterval);
+}
+
 function tickGame(){
     moveSnake();
     renderBoard();
@@ -171,6 +179,7 @@ function tickGame(){
 function reset(){
     gameState.gameRunning = true;
     gameState.score = 0;
+    gameState.curInterval = 200;
 
     status.style.display = "flex";
     startGameButton.style.display = "none";
@@ -190,6 +199,11 @@ function updateStatus(){
         status.innerHTML = "Current Score: " + gameState.score;        
     }else{
         status.innerHTML = "GAME OVER! Your Score: " + gameState.score;
+        if(gameState.score > gameState.highScore){
+            gameState.highScore = gameState.score;
+            status.innerHTML += " NEW HIGH SCORE!"
+            highScore.innerHTML = "High Score: " + gameState.highScore;
+        }
     }
 }
 

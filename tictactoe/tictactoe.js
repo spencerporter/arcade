@@ -1,4 +1,3 @@
-// let cells = document.getElementsByClassName("TD");
 let board = document.getElementById("board");
 let status = document.getElementById("status");
 let gameArea = document.getElementById("gameArea");
@@ -67,6 +66,7 @@ function reset(){
     vsP.innerHTML = " VS. ";
     inputArea.innerHTML = "";
     startGameButton.style.display = "flex";
+
     inputArea.insertBefore(player2Input, inputArea.firstChild);
     inputArea.insertBefore(vsP, inputArea.firstChild);
     inputArea.insertBefore(player1Input, inputArea.firstChild);
@@ -187,8 +187,10 @@ function checkAIClick(){
     }       
 }
 
+//Set Interval for Computer(s) to check if they need to click
 setInterval(checkAIClick, 1000);
 
+//Event Listeners
 document.getElementById("restart").addEventListener("click",reset);
 document.getElementById("board").addEventListener("click",cellClick);
 startGameButton.addEventListener("click", startGame);
